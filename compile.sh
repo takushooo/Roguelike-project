@@ -1,0 +1,1 @@
+javac -d bin src/main/java/game/*.java src/main/java/game/equipments/*.java src/main/java/game/monsters/*.java
