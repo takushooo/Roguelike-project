@@ -126,17 +126,18 @@ public class Game {
                 if (choice != 2) player.randomizeAttackPower(); // 攻撃力をランダムに再設定
                 if (choice != 3) player.randomizeDefensePower(); // 防御力をランダムに再設定
 
+                player.setHp(player.getMaxHp()); // HPを最大HPに回復
+                System.out.println("属性を再設定しました。ゲームを再開します。");
+                System.out.println("=== 再設定後のステータス ===");
+                System.out.println("HP: " + player.getHpStatus());
+                System.out.println("攻撃力: " + player.getAttackPower());
+                System.out.println("防御力: " + player.getDefensePower());
+                System.out.println("==========================");
+
                 winStreak = 0;
-            }
 
-            if (player.getHp() <= 0) {
-                System.out.println("プレイヤーが倒れた... ゲームオーバー");
-                break;
-            }
-
-            if (winStreak >= MAX_WINS) {
-                System.out.println("ゲームクリア！おめでとう！");
-                break;
+                monster = createRandomMonster(); // 新しいモンスターの生成
+                continue;
             }
         }
     }
